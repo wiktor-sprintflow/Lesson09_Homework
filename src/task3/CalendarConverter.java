@@ -1,37 +1,37 @@
 package task3;
 
 class CalendarConverter {
-    static final private int MONDAY = 1;
-    static final private int TUESDAY = 2;
-    static final private int WEDNESDAY = 3;
-    static final private int THURSDAY = 4;
-    static final private int FRIDAY = 5;
-    static final private int SATURDAY = 6;
-    static final private int SUNDAY = 7;
+    private static final int MONDAY = 1;
+    private static final int TUESDAY = 2;
+    private static final int WEDNESDAY = 3;
+    private static final int THURSDAY = 4;
+    private static final int FRIDAY = 5;
+    private static final int SATURDAY = 6;
+    private static final int SUNDAY = 7;
 
     static String convertDayToString(int dayNumber) {
         String day;
         switch (dayNumber) {
             case MONDAY:
-                day = MONDAY + " dzień tygodnia to Poniedziałek";
+                day = "Poniedziałek";
                 break;
             case TUESDAY:
-                day = TUESDAY + " dzień tygodnia to Wtorek";
+                day = "Wtorek";
                 break;
             case WEDNESDAY:
-                day = WEDNESDAY + " dzień tygodnia to Sroda";
+                day = "Sroda";
                 break;
             case THURSDAY:
-                day = THURSDAY + " dzień tygodnia to Czwartek";
+                day = "Czwartek";
                 break;
             case FRIDAY:
-                day = FRIDAY + " dzień tygodnia to Piątek";
+                day = "Piątek";
                 break;
             case SATURDAY:
-                day = SATURDAY + " dzień tygodnia to Sobota";
+                day = "Sobota";
                 break;
             case SUNDAY:
-                day = SUNDAY + " dzień tygodnia to Niedziela";
+                day = "Niedziela";
                 break;
             default:
                 day = "Niepoprawna wartość dnia tygodnia";
