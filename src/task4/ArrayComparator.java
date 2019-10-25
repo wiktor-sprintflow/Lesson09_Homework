@@ -3,15 +3,10 @@ package task4;
 class ArrayComparator {
     static boolean compare(int[] table1, int[] table2) {
         if (validateTables(table1, table2)) {
-            if (table1.length != table2.length) {
+            if (!hasSameLength(table1, table2)) {
                 return false;
             } else {
-                for (int i = 0; i < table1.length; i++) {
-                    if (table1[i] != table2[i]) {
-                        return false;
-                    }
-                }
-                return true;
+                return compareTableValues(table1, table2);
             }
         } else {
             System.out.println("Nieprawidłowe dane wejściowe.");
@@ -32,10 +27,26 @@ class ArrayComparator {
     }
 
     private static boolean isInitiated(int[] table) {
-        int sum = 0;
+        boolean isInitiated = false;
         for (int i = 0; i < table.length; i++) {
-            sum += table[i];
+            if (table[i] != 0) {
+                isInitiated = true;
+                break;
+            }
         }
-        return sum == 0 ? false : true;
+        return isInitiated;
+    }
+
+    private static boolean hasSameLength(int[] table1, int[] table2) {
+        return (table1.length == table2.length);
+    }
+
+    private static boolean compareTableValues(int[] table1, int[] table2) {
+        for (int i = 0; i < table1.length; i++) {
+            if (table1[i] != table2[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
