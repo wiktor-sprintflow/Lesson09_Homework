@@ -9,32 +9,16 @@ class ArrayComparator {
                 return compareTableValues(table1, table2);
             }
         } else {
-            System.out.println("Nieprawidłowe dane wejściowe.");
             return false;
         }
     }
 
     private static boolean validateTables(int[] table1, int[] table2) {
-        if (table1 == null || table2 == null) {
-            System.out.println("Przynajmniej jedna tablica jest nullem.");
-            return false;
-        } else if (!isInitiated(table1) || !isInitiated(table2)) {
-            System.out.println("Przynajmniej jedna tablica jest pusta.");
+        if (table1 == null || table2 == null || table1.length == 0 || table2.length == 0) {
             return false;
         } else {
             return true;
         }
-    }
-
-    private static boolean isInitiated(int[] table) {
-        boolean isInitiated = false;
-        for (int i = 0; i < table.length; i++) {
-            if (table[i] != 0) {
-                isInitiated = true;
-                break;
-            }
-        }
-        return isInitiated;
     }
 
     private static boolean hasSameLength(int[] table1, int[] table2) {
